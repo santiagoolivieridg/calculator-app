@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blue">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Calculator App</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <h1>calc</h1>
+
+        <div class="themes-container">
+          <label class="container">
+            <input type="radio" name="themes" value="blue" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">
+            <input type="radio" name="themes" value="light" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">
+            <input type="radio" name="themes" value="dark" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </header>
+
+      <section class="number-screen">
+        <div id="screen"></div>
+      </section>
+
+      <main class="numpad">
+        <div class="numpad__row">
+          <button class="btn btn-num">7</button>
+          <button class="btn btn-num">8</button>
+          <button class="btn btn-num">9</button>
+          <button class="btn btn-del">del</button>
+        </div>
+        <div class="numpad__row">
+          <button class="btn btn-num">4</button>
+          <button class="btn btn-num">5</button>
+          <button class="btn btn-num">6</button>
+          <button class="btn btn-num">+</button>
+        </div>
+        <div class="numpad__row">
+          <button class="btn btn-num">1</button>
+          <button class="btn btn-num">2</button>
+          <button class="btn btn-num">3</button>
+          <button class="btn btn-num">-</button>
+        </div>
+        <div class="numpad__row">
+          <button class="btn btn-num">.</button>
+          <button class="btn btn-num">0</button>
+          <button class="btn btn-num">/</button>
+          <button class="btn btn-num">x</button>
+        </div>
+
+        <div class="numpad__large-btn">
+          <button class="btn btn-large btn-del">reset</button>
+          <button class="btn btn-large btn-equal">=</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/toggle-theme.js"></script>
+  </body>
+</html>

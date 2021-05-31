@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+html {
+  --background: hsl(222, 26%, 31%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --main-key: hsl(30, 25%, 89%);
+  --main-shadow: hsl(28, 16%, 65%);
+  --equal-key: hsl(6, 63%, 50%);
+  --equal-shadow: hsl(6, 70%, 34%);
+  --option-key: hsl(225, 21%, 49%);
+  --option-shadow: hsl(224, 28%, 35%);
+  --keypad-text: hsl(222, 13%, 35%);
+  --equal-text: #fff;
+  --headings: #fff;
+  --white: #fff;
+}
+
+html[data-theme="light"] {
+  --background: hsl(0, 0%, 90%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --main-key: hsl(45, 7%, 89%);
+  --main-shadow: hsl(35, 11%, 61%);
+  --equal-key: hsl(25, 98%, 40%);
+  --equal-shadow: hsl(25, 99%, 27%);
+  --option-key: hsl(185, 42%, 37%);
+  --option-shadow: hsl(185, 58%, 25%);
+  --keypad-text: hsl(60, 10%, 19%);
+  --headings: hsl(60, 10%, 19%);
+}
+
+html[data-theme="dark"] {
+  --background: hsl(268, 75%, 9%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --main-key: hsl(268, 47%, 21%);
+  --main-shadow: hsl(290, 70%, 36%);
+  --equal-key: hsl(176, 100%, 44%);
+  --equal-shadow: hsl(177, 92%, 70%);
+  --option-key: hsl(281, 89%, 26%);
+  --option-shadow: hsl(285, 91%, 52%);
+  --keypad-text: hsl(52, 100%, 62%);
+  --equal-text: hsl(198, 20%, 13%);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  list-style-type: none;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  -webkit-transition: all 750ms;
+  transition: all 750ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+}
+
+/*input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 30.3px;
+  background: var(--keypad-background);
+  display: block;
+  border-radius: 30px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: var(--equal-key);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 29px;
+}*/
+/* Customize the label (the container) */
+.container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--keypad-background);
+  border: 1px solid var(--white);
+  border-radius: 25px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: var(--screen-background);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--equal-key);
+  border: 1px solid var(--equal-key);
+}
+
+.themes-container {
+  background-color: var(--keypad-background);
+  padding: 10px;
+  width: 100px;
+  height: 25px;
+  border-radius: 30px;
+}
+
+body {
+  background-color: var(--background);
+  margin: 45px 15px;
+}
+
+.main-container {
+  margin: auto;
+  max-width: 290px;
+}
+
+h1 {
+  color: var(--headings);
+}
+
+h2 {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 1.5em;
+  color: var(--headings);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.themes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.themes-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.themes-options__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.number-screen {
+  background-color: var(--screen-background);
+  padding: 26px;
+  margin: 32px 0px 20px 0px;
+  border-radius: 8px;
+}
+
+.number-screen div {
+  color: var(--headings);
+  font-size: 2em;
+  text-align: right;
+}
+
+.numpad {
+  background-color: var(--keypad-background);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.numpad__row, .numpad__large-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.numpad .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  font-size: 1.8em;
+  margin: 9px 5px;
+}
+
+.numpad .btn-large {
+  width: 130px;
+}
+
+.numpad .btn-num {
+  background-color: var(--main-key);
+  -webkit-box-shadow: 0px 4px 0px var(--main-shadow);
+          box-shadow: 0px 4px 0px var(--main-shadow);
+  color: var(--keypad-text);
+}
+
+.numpad .btn-del {
+  background-color: var(--option-key);
+  -webkit-box-shadow: 0px 4px 0px var(--option-shadow);
+          box-shadow: 0px 4px 0px var(--option-shadow);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.numpad .btn-equal {
+  background-color: var(--equal-key);
+  -webkit-box-shadow: 0px 4px 0px var(--equal-shadow);
+          box-shadow: 0px 4px 0px var(--equal-shadow);
+  color: var(--equal-text);
+}
+/*# sourceMappingURL=main.css.map */
