@@ -219,16 +219,29 @@ h2 {
 }
 
 .number-screen {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: var(--screen-background);
+  height: 90px;
   padding: 26px;
   margin: 32px 0px 20px 0px;
   border-radius: 8px;
 }
 
-.number-screen div {
+.number-screen p {
   color: var(--headings);
-  font-size: 2em;
   text-align: right;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.number-screen #history {
+  font-size: 1vw;
+}
+
+.number-screen #output {
+  font-size: 2vw;
 }
 
 .numpad {
@@ -268,6 +281,7 @@ h2 {
   border-radius: 4px;
   font-size: 1.8em;
   margin: 9px 5px;
+  cursor: pointer;
 }
 
 .numpad .btn-large {

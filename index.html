@@ -31,38 +31,43 @@
       </header>
 
       <section class="number-screen">
-        <div id="screen"></div>
+        <div id="screen">
+          <p id="history"></p>
+          <p id="output"></p>
+        </div>
       </section>
 
       <main class="numpad">
         <div class="numpad__row">
-          <button class="btn btn-num">7</button>
-          <button class="btn btn-num">8</button>
-          <button class="btn btn-num">9</button>
-          <button class="btn btn-del">del</button>
+          <button id="7" class="btn btn-num number">7</button>
+          <button id="8" class="btn btn-num number">8</button>
+          <button id="9" class="btn btn-num number">9</button>
+          <button id="delete" class="btn btn-del operator">del</button>
         </div>
         <div class="numpad__row">
-          <button class="btn btn-num">4</button>
-          <button class="btn btn-num">5</button>
-          <button class="btn btn-num">6</button>
-          <button class="btn btn-num">+</button>
+          <button id="4" class="btn btn-num number">4</button>
+          <button id="5" class="btn btn-num number">5</button>
+          <button id="6" class="btn btn-num number">6</button>
+          <button id="+" class="btn btn-num operator">+</button>
         </div>
         <div class="numpad__row">
-          <button class="btn btn-num">1</button>
-          <button class="btn btn-num">2</button>
-          <button class="btn btn-num">3</button>
-          <button class="btn btn-num">-</button>
+          <button id="1" class="btn btn-num number">1</button>
+          <button id="2" class="btn btn-num number">2</button>
+          <button id="3" class="btn btn-num number">3</button>
+          <button id="-" class="btn btn-num operator">-</button>
         </div>
         <div class="numpad__row">
-          <button class="btn btn-num">.</button>
-          <button class="btn btn-num">0</button>
-          <button class="btn btn-num">/</button>
-          <button class="btn btn-num">x</button>
+          <button id="." class="btn btn-num operator">.</button>
+          <button id="0" class="btn btn-num number">0</button>
+          <button id="/" class="btn btn-num operator">/</button>
+          <button id="*" class="btn btn-num operator">x</button>
         </div>
 
         <div class="numpad__large-btn">
-          <button class="btn btn-large btn-del">reset</button>
-          <button class="btn btn-large btn-equal">=</button>
+          <button id="reset" class="btn btn-large btn-del operator">
+            reset
+          </button>
+          <button id="=" class="btn btn-large btn-equal operator">=</button>
         </div>
       </main>
     </div>
