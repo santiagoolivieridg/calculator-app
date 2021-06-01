@@ -237,11 +237,11 @@ h2 {
 }
 
 .number-screen #history {
-  font-size: 1vw;
+  font-size: 12px;
 }
 
 .number-screen #output {
-  font-size: 2vw;
+  font-size: 30px;
 }
 
 .numpad {
